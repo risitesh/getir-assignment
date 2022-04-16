@@ -1,0 +1,24 @@
+{
+  "name": "getir",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "DEBUG=getir node server.js",
+    "test": "jest --detectOpenHandles"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.1",
+    "debug": "^4.3.3",
+    "dotenv": "^15.0.0",
+    "express": "^4.17.2",
+    "express-validator": "^6.14.0",
+    "jest": "^27.4.7",
+    "moment": "^2.29.1",
+    "mongoose": "^6.1.8",
+    "morgan": "^1.10.0",
+    "supertest": "^6.2.2"
+  }
+}
