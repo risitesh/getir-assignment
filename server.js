@@ -12,7 +12,7 @@ mongoose
     })
     .then(() => debug('Connected to DB'))
 
-mongoose.set('debug', true);
+// mongoose.set('debug', true);
 mongoose.connection.on('error', err =>
     debug('Failed to connect to mongo db via mongoose: %o', err.message)
 )

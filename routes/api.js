@@ -1,4 +1,5 @@
 const { body, validationResult } = require('express-validator');
+const { getRecords } = require("../controllers/records_controller");
 
 module.exports = (app) => {
     app.post('/records', [
@@ -29,7 +30,13 @@ module.exports = (app) => {
             const msg = errors.array()[0].msg;
             return res.status(400).json({ code, msg, records: [] });
         }
-        return res.sendStatus(201);
+        const result = await getRecords(req.body);
+        if (result.statusCode === 200 && result.data && result.data.length === 0) {
+            code = 1
+        } else if (result.statusCode === 200) {
+            code = 0;
+        }
+        return res.status(result.statusCode).send({ code, msg: result.message, records: result.data });
     });
 
     return app;
