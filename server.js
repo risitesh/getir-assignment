@@ -17,5 +17,5 @@ mongoose.connection.on('error', err =>
     debug('Failed to connect to mongo db via mongoose: %o', err.message)
 )
 
-const serverPort = process.env.PORT || 3000;
+const serverPort = process.env.PORT || 3021;
 app.listen(serverPort, () => debug('App running on %o', serverPort));
